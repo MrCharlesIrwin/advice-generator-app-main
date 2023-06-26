@@ -83,9 +83,12 @@ main {
     aspect-ratio: 1;
     opacity: 0.8;
 
-    &:hover ,&:focus {
+    &:focus {
       outline: 1px solid $NeonGreen;
+    }
+    &:hover {
       filter: drop-shadow(0 0 1em $NeonGreen);
+      cursor: pointer;
       opacity: 1;
     }
   }
