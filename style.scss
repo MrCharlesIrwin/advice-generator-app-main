@@ -1,0 +1,92 @@
+// Primary
+
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+
+// Neutral
+
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayishBlue: hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+
+body {
+  background-color: $DarkBlue;
+  color: $LightCyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+main {
+  box-shadow: 0 0 5em hsla(0, 0, 0, 0.2);
+  background-color: $DarkGrayishBlue;
+  border-radius: 1em;
+  text-align: center;
+  font-size: 1.3em;
+  padding: 1.5em 1.8em 3em;
+  position: relative;
+  h1 {
+    color: $NeonGreen;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+  }
+  p {
+    width: 30ch;
+    margin-inline: auto;
+    font-weight: 800;
+    &::before {
+      content: open-quote;
+    }
+    &::after {
+      content: close-quote;
+    }
+  }
+  div {
+    display: flex;
+    img {
+      width: 100%;
+      margin-top: 0.4em;
+    }
+  }
+  @media (max-width: 900px) {
+    .mobileImg {
+      display: block;
+    }
+    .desktopImg {
+      display: none;
+    }
+  }
+  @media (min-width: 900px) {
+    .mobileImg {
+      display: none;
+    }
+    .desktopImg {
+      display: block;
+    }
+  }
+  button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    background-color: $NeonGreen;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4em;
+    aspect-ratio: 1;
+    opacity: 0.8;
+
+    &:hover ,&:focus {
+      outline: 1px solid $NeonGreen;
+      filter: drop-shadow(0 0 1em $NeonGreen);
+      opacity: 1;
+    }
+  }
+}
